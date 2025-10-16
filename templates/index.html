@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowel Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f5f7;
+            text-align: center;
+            padding: 50px;
+        }
+
+        form {
+            background: white;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Vowel Counter App</h1>
+    <form method="POST">
+        <input type="text" name="text" placeholder="Enter your text" required>
+        <button type="submit">Count</button>
+    </form>
+    {% if result %}
+    <h2>{{ result }}</h2>
+    {% endif %}
+</body>
+
+</html>
