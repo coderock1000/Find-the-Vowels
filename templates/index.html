@@ -9,27 +9,31 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #eef2f3;
-            text-align: center;
-            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        form {
+        .container {
             background: white;
-            display: inline-block;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 30px;
+            border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
         }
 
         input[type="text"] {
             padding: 10px;
-            width: 250px;
+            width: 90%;
             border: 1px solid #ccc;
             border-radius: 5px;
+            margin-bottom: 10px;
         }
 
         button {
-            background-color: #28a745;
+            background-color: #007bff;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -38,47 +42,47 @@
         }
 
         button:hover {
-            background-color: #218838;
-        }
-
-        h2 {
-            color: #333;
+            background-color: #0056b3;
         }
 
         .result {
-            margin-top: 20px;
-            background: #fff;
-            display: inline-block;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 15px;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
         }
 
         .result p {
-            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        h1 {
+            margin-bottom: 20px;
         }
     </style>
 </head>
 
 <body>
-    <h1>Vowel Counter App</h1>
-    <form method="POST">
-        <input type="text" name="text" placeholder="Enter your text" required>
-        <button type="submit">Count</button>
-    </form>
+    <div class="container">
+        <h1>Vowel Counter</h1>
+        <form method="POST">
+            <input type="text" name="text" placeholder="Enter your text" required>
+            <br>
+            <button type="submit">Count</button>
+        </form>
 
-    {% if result %}
-    <div class="result">
-        <h2>Vowel Count Results</h2>
-        <p>A: {{ result.a }}</p>
-        <p>E: {{ result.e }}</p>
-        <p>I: {{ result.i }}</p>
-        <p>O: {{ result.o }}</p>
-        <p>U: {{ result.u }}</p>
-        <hr>
-        <p><b>Total Vowels:</b> {{ result.total }}</p>
+        {% if result %}
+        <div class="result">
+            <p><b>A:</b> {{ result.a }}</p>
+            <p><b>E:</b> {{ result.e }}</p>
+            <p><b>I:</b> {{ result.i }}</p>
+            <p><b>O:</b> {{ result.o }}</p>
+            <p><b>U:</b> {{ result.u }}</p>
+            <hr>
+            <p><b>Total Vowels:</b> {{ result.total }}</p>
+        </div>
+        {% endif %}
     </div>
-    {% endif %}
 </body>
 
 </html>

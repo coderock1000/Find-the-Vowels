@@ -10,14 +10,8 @@ def count_vowels():
         vowels = 'aeiou'
         counts = {v: text.lower().count(v) for v in vowels}
         total = sum(counts.values())
-        result = {
-            'a': counts['a'],
-            'e': counts['e'],
-            'i': counts['i'],
-            'o': counts['o'],
-            'u': counts['u'],
-            'total': total
-        }
+        result = counts
+        result['total'] = total
     return render_template('index.html', result=result)
 
 if __name__ == '__main__':
