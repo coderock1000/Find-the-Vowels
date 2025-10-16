@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f2f5f7;
+            background-color: #eef2f3;
             text-align: center;
             padding: 50px;
         }
@@ -18,7 +18,7 @@
             display: inline-block;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         input[type="text"] {
@@ -29,7 +29,7 @@
         }
 
         button {
-            background-color: #007bff;
+            background-color: #28a745;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -38,11 +38,24 @@
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #218838;
         }
 
         h2 {
             color: #333;
+        }
+
+        .result {
+            margin-top: 20px;
+            background: #fff;
+            display: inline-block;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .result p {
+            font-size: 18px;
         }
     </style>
 </head>
@@ -53,8 +66,18 @@
         <input type="text" name="text" placeholder="Enter your text" required>
         <button type="submit">Count</button>
     </form>
+
     {% if result %}
-    <h2>{{ result }}</h2>
+    <div class="result">
+        <h2>Vowel Count Results</h2>
+        <p>A: {{ result.a }}</p>
+        <p>E: {{ result.e }}</p>
+        <p>I: {{ result.i }}</p>
+        <p>O: {{ result.o }}</p>
+        <p>U: {{ result.u }}</p>
+        <hr>
+        <p><b>Total Vowels:</b> {{ result.total }}</p>
+    </div>
     {% endif %}
 </body>
 
